@@ -35,26 +35,18 @@ author: HyG
 获取剩余时间的代码如下：
 
 ```js
-/**
- * 获取剩余时间
- * @param  {Number} endTime    截止时间
- * @param  {Number} deviceTime 设备时间
- * @param  {Number} serverTime 服务端时间
- * @return {Object}            剩余时间对象
- */
-let getRemainTime = (endTime, deviceTime, serverTime) => {
-    let t = endTime - Date.parse(new Date()) - serverTime + deviceTime
-    let seconds = Math.floor((t / 1000) % 60)
-    let minutes = Math.floor((t / 1000 / 60) % 60)
-    let hours = Math.floor((t / (1000 * 60 * 60)) % 24)
-    let days = Math.floor(t / (1000 * 60 * 60 * 24))
-    return {
-        'total': t,
-        'days': days,
-        'hours': hours,
-        'minutes': minutes,
-        'seconds': seconds
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    //cell重用
+    VVeboTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+
+    if (cell==nil) {
+        cell = [[VVeboTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+
+    //绘制
+    [self drawCell:cell withIndexPath:indexPath];
+    return cell;
 }
 ```
 
