@@ -34,7 +34,7 @@ author: HyG
 
 获取剩余时间的代码如下：
 
-```js
+```
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     //cell重用
